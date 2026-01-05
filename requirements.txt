@@ -8,6 +8,7 @@ torchvision
 supervision
 kernels
 spaces
+gradio
 hf_xet
 torch
 numpy
