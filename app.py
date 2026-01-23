@@ -94,8 +94,8 @@ dtype = torch.bfloat16
 pipe = QwenImageEditPlusPipeline.from_pretrained(
     "Qwen/Qwen-Image-Edit-2509",
     transformer=QwenImageTransformer2DModel.from_pretrained(
-        "linoyts/Qwen-Image-Edit-Rapid-AIO",
-        subfolder='transformer',
+        "prithivMLmods/Qwen-Image-Edit-Rapid-AIO-V19",
+        #subfolder='transformer',
         torch_dtype=dtype,
         device_map='cuda'
     ),
@@ -120,6 +120,16 @@ ADAPTER_SPECS = {
         "repo": "prithivMLmods/Qwen-Image-Edit-2511-Object-Remover",
         "weights": "Qwen-Image-Edit-2511-Object-Remover.safetensors",
         "adapter_name": "object-remover"
+    },
+    "QIE-2511-Object-Remover-v2": {
+        "repo": "prithivMLmods/QIE-2511-Object-Remover-v2",
+        "weights": "Qwen-Image-Edit-2511-Object-Remover-v2-9200.safetensors",
+        "adapter_name": "object-remover"
+    },
+    "Zoom-Master": {
+        "repo": "prithivMLmods/QIE-2511-Zoom-Master",
+        "weights": "Qwen-Image-Edit-2511-Zoom-Master-8800.safetensors",
+        "adapter_name": "zoom-master"
     },
 }
 
@@ -309,6 +319,9 @@ with gr.Blocks() as demo:
                 [["examples/A.jpg"], "Add the slim rectangular transparent frame sunglasses to the image while preserving the background lighting and surrounding elements maintaining realism and original details.", "Qwen-Image-Edit-2511-Object-Adder"],
                 [["examples/B.jpeg"], "Remove the necklace and goggles from the image while preserving the background and remaining elements, maintaining realism and original details.", "Qwen-Image-Edit-2511-Object-Remover"],
                 [["examples/C.png"], "Add the leather cowboy cap to the image while preserving the background lighting and surrounding elements maintaining realism and original details.", "Qwen-Image-Edit-2511-Object-Adder"],
+                [["examples/ZM.jpg"], "Zoom into the red highlighted area.", "Zoom-Master"],
+                [["examples/OBJ1.jpg"], "Remove the red highlighted object from the scene.", "QIE-2511-Object-Remover-v2"],
+                [["examples/OBJ2.jpg"], "Remove the red highlighted object from the scene.", "QIE-2511-Object-Remover-v2"],
             ],
             inputs=[images, prompt, lora_adapter],
             outputs=[output_image, seed],
