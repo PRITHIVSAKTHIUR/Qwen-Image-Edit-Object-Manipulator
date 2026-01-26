@@ -131,6 +131,11 @@ ADAPTER_SPECS = {
         "weights": "Qwen-Image-Edit-2511-Zoom-Master-8800.safetensors",
         "adapter_name": "zoom-master"
     },
+    "Extract-Outfit": {
+        "repo": "prithivMLmods/QIE-2511-Extract-Outfit",
+        "weights": "QIE-2511-Extract-Outfit-4200.safetensors",
+        "adapter_name": "extract-outfit"
+    },    
 }
 
 LOADED_ADAPTERS = set()
@@ -322,6 +327,7 @@ with gr.Blocks() as demo:
                 [["examples/ZM.jpg"], "Zoom into the red highlighted area.", "Zoom-Master"],
                 [["examples/OBJ1.jpg"], "Remove the red highlighted object from the scene.", "QIE-2511-Object-Remover-v2"],
                 [["examples/OBJ2.jpg"], "Remove the red highlighted object from the scene.", "QIE-2511-Object-Remover-v2"],
+                [["examples/OE.jpg"], "Extract the clothing and create a flat mockup.", "Extract-Outfit"],
             ],
             inputs=[images, prompt, lora_adapter],
             outputs=[output_image, seed],
