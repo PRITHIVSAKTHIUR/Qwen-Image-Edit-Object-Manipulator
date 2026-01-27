@@ -4,6 +4,8 @@ A Gradio-based interactive demonstration built on top of Qwen/Qwen-Image-Edit-25
 
 The demo emphasizes structural consistency and visual realism, preserving original lighting conditions, shadows, textures, perspective, and background context during edits. Fine-grained prompt control allows users to specify exact object attributes, placement, and transformations, reducing unwanted artifacts and improving edit fidelity. For performance, the pipeline is accelerated using Flash Attention 3, enabling low-latency inference even at higher resolutions and complex edit scenarios. The result is a responsive, production-ready image editing interface suitable for research, prototyping, and real-world creative applications.
 
+`This app uses Gradio v6.3.0.`
+
 <img width="1402" height="773" alt="Screenshot 2026-01-27 093348" src="https://github.com/user-attachments/assets/0de13e40-b149-4c57-88ac-115206ccf0d9" />
 <img width="1413" height="780" alt="Screenshot 2026-01-27 093432" src="https://github.com/user-attachments/assets/79e1ca5f-3ff2-4515-8b6f-659776fd43a9" />
 
