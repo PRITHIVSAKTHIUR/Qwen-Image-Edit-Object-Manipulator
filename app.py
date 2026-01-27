@@ -136,6 +136,11 @@ ADAPTER_SPECS = {
         "weights": "QIE-2511-Extract-Outfit-4200.safetensors",
         "adapter_name": "extract-outfit"
     },    
+    "Outfit-Design-Layout": {
+        "repo": "prithivMLmods/QIE-2511-Outfit-Design-Layout",
+        "weights": "QIE-2511-Outfit-Design-Layout-3000.safetensors",
+        "adapter_name": "layout-outfit"
+    }, 
 }
 
 LOADED_ADAPTERS = set()
@@ -323,6 +328,8 @@ with gr.Blocks() as demo:
                 [["examples/D.jpg"], "Add the batman logo to the image while preserving the background lighting and surrounding elements maintaining realism and original details.", "Qwen-Image-Edit-2511-Object-Adder"],
                 [["examples/A.jpg"], "Add the slim rectangular transparent frame sunglasses to the image while preserving the background lighting and surrounding elements maintaining realism and original details.", "Qwen-Image-Edit-2511-Object-Adder"],
                 [["examples/B.jpeg"], "Remove the necklace and goggles from the image while preserving the background and remaining elements, maintaining realism and original details.", "Qwen-Image-Edit-2511-Object-Remover"],
+                [["examples/DL2.jpg"], "add the nike tick design inside the red marked area.", "Outfit-Design-Layout"],
+                [["examples/DL1.jpg"], "add the akatsuki cloud design inside the red marked area.", "Outfit-Design-Layout"],
                 [["examples/C.png"], "Add the leather cowboy cap to the image while preserving the background lighting and surrounding elements maintaining realism and original details.", "Qwen-Image-Edit-2511-Object-Adder"],
                 [["examples/ZM.jpg"], "Zoom into the red highlighted area.", "Zoom-Master"],
                 [["examples/OBJ1.jpg"], "Remove the red highlighted object from the scene.", "QIE-2511-Object-Remover-v2"],
